@@ -14,6 +14,9 @@
       <div class="chart">
         <pieChart />
       </div>
+      <div class="chart">
+        <funnelChart />
+      </div>
     </div>
   </div>
 </template>
