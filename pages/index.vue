@@ -1,19 +1,18 @@
 <template>
   <div>
     <h1>Chart Demo</h1>
-
     <div class="grid">
       <div class="chart">
-        <ChartBar />
+        <HorizBar />
       </div>
       <div class="chart">
-        <ChartDoughnut />
+        <StackedBar />
       </div>
       <div class="chart">
-        <ChartLine />
+        <vertBar />
       </div>
       <div class="chart">
-        <ChartStack />
+        <pieChart />
       </div>
     </div>
   </div>
