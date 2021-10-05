@@ -20,7 +20,12 @@
     </div>
   </div>
 </template>
-
+<script>
+if (process.client) {
+  require("chart.js");
+  require("chartjs-plugin-funnel");
+}
+</script>
 <style lang="css" scoped>
 .grid {
   display: flex;

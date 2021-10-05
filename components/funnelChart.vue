@@ -2,58 +2,45 @@
   <div id="app">
     <p class="title">Chart.jS Vue</p>
     <p>
-      <canvas id="graph5" width="400" height="400"></canvas>
+      <canvas id="chart-area" ref="graph6" width="400" height="400"></canvas>
     </p>
   </div>
 </template>
 
 <script>
-import Chart from "chart.js/auto";
 export default {
   components: {},
-  mounted: function() {
-    var ctx = document.getElementById("graph5").getContext("2d");
-    var bar = new Chart(ctx, {
+  mounted() {
+    var config = {
       type: "funnel",
       data: {
-        labels: ["1", "2"],
         datasets: [
           {
-            label: "Dataset 1",
-            data: ["10", "9"],
-            borderColor: "red",
-            backgroundColor: "red"
-          },
-          {
-            label: "Dataset 2",
-            data: ["5", "2"],
-            borderColor: "blue",
-            backgroundColor: "blue"
+            data: [30, 60, 90],
+            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+            hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
           }
-        ]
+        ],
+        labels: ["Red", "Blue", "Yellow"]
       },
       options: {
-        indexAxis: "y",
-        // Elements options apply to all of the options unless overridden in a dataset
-        // In this case, we are setting the border of each horizontal bar to be 2px wide
-        elements: {
-          bar: {
-            borderWidth: 2
-          }
-        },
         responsive: true,
-        plugins: {
-          legend: {
-            position: "right"
-          },
-          title: {
-            display: true,
-            text: "Chart.js Horizontal Bar Chart"
-          }
+        legend: {
+          position: "top"
+        },
+        title: {
+          display: true,
+          text: "Chart.js Funnel Chart"
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
         }
       }
-    });
-    console.log(bar);
+    };
+
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    new Chart(ctx, config);
   },
   data() {
     return {};

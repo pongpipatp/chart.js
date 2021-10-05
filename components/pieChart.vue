@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Chart from "chart.js/auto";
+// import Chart from "chart.js/auto";
 export default {
   components: {},
-  mounted: function() {
+  mounted() {
     var ctx = document.getElementById("graph4").getContext("2d");
     var bar = new Chart(ctx, {
       type: "pie",
